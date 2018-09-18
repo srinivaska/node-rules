@@ -1,8 +1,6 @@
 {
   "PQ": {
     "USER_SMOKE_NOTIFICATIONS": {
-      "1": "PQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 1",
-      "2": "PQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 2",
       "5": "PQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 5",
       "6": "PQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 6"
     },

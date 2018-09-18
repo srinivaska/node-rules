@@ -6,7 +6,7 @@ var conditions = require('./rules.json');
 var RuleEngine = require('node-rules');
 var R = new RuleEngine();
 
-function executeRule(RULE_COMMAND) {
+function executeRule(RULE_COMMANDS) {
 
 
   User.find({}, function(err, user) {
@@ -19,7 +19,7 @@ function executeRule(RULE_COMMAND) {
 
       var fact = {
         "phase":user[i].phase,
-        "command":RULE_COMMAND,
+        "command":RULE_COMMANDS,
         "days":diffDays,
         "user":user[i]
       }
@@ -28,10 +28,14 @@ function executeRule(RULE_COMMAND) {
       R.register(rules);
 
       R.execute(fact, function(data) {
+       
         if (data.result) {
           console.log("Sending Notification to ".green  + data.username+"  :".red + data.response);      
-        } else {
-          console.log('No Notifications'.red);
+        }
+
+        if(data.smoke_notif){
+          console.log("Smoke Notification : ".green + data.smoke_notif_message);
+          console.log("======END======");
         }
       });
 

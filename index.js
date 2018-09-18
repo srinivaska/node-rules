@@ -31,7 +31,7 @@ console.log('Before job instantiation');
 const job = new CronJob('*/1 * * * *', function() {
 	const d = new Date();
   console.log('Every One Minute:', d);
-  Rules.executeRule("USER_DAYS");
+  Rules.executeRule(["USER_SMOKE_NOTIFICATIONS","USER_DAYS"]);
 });
 
 console.log('After job instantiation');
