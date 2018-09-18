@@ -1,0 +1,26 @@
+{
+  "PQ": {
+    "USER_SMOKE_NOTIFICATIONS": {
+      "1": "PQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 1",
+      "2": "PQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 2",
+      "5": "PQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 5",
+      "6": "PQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 6"
+    },
+    "USER_DAYS": {
+      "10": "PQ : USER_DAYS  : 10",
+      "20": "PQ : USER_DAYS  : 20"
+    }
+  },
+  "MQ": {
+    "USER_SMOKE_NOTIFICATIONS": {
+      "1": "MQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 1",
+      "2": "MQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 2",
+      "5": "MQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 5",
+      "6": "MQ : USER_SMOKE_NOTIFICATIONS : smoke_count : 6"
+    },
+    "USER_DAYS": {
+      "10": "MQ : USER_DAYS  : 10",
+      "20": "MQ : USER_DAYS  : 20"
+    }
+  }
+}

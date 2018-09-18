@@ -5,14 +5,11 @@ var mongoose = require('mongoose');
 var User = require('./usermodel');
 var RuleEngine =  require('node-rules');
 var colors = require('colors');
-var rules = require('./node-rules-controller');
+var Rules = require('./node-rules-controller');
 
 //Define request response in root URL (/)
 app.get('/', function(req, res) {
-  
-  
- 
-
+  res.send("hello");
 });
 
 // Database connection
@@ -33,8 +30,8 @@ const CronJob = require('cron').CronJob;
 console.log('Before job instantiation');
 const job = new CronJob('*/1 * * * *', function() {
 	const d = new Date();
-	console.log('Every One Minute:', d);
-  rules.executeRules();
+  console.log('Every One Minute:', d);
+  Rules.executeRule("USER_DAYS");
 });
 
 console.log('After job instantiation');

@@ -1,27 +1,25 @@
 var User = require('./usermodel');
+var conditions = require('./rules.json');
 
-function validate(R, context) {
-  var flag = true;
-  User.find({}, function(err, data) {
-    for (var i = 0; i < data.length; i++) {
-      if (data[i].name == context.name && data[i].phone == context.phone) {
-        flag = false;
-        break;
-      } 
-    }
-    R.when(flag);
-  });
-}
+
 
 function getRules() {
   return [
     {
       condition: function(R) {
-        validate(R,this);
+        var getUserConditions = conditions[this.phase][this.command];
+        const keys = Object.keys(getUserConditions);
+        var days = "" + this.days;
+        if(keys.indexOf(days) != -1){
+            this.response = getUserConditions[days];
+            this.username = this.user.name;
+            R.when(false);
+        }else{
+            R.when(true);
+        }
       },
       consequence: function(R) {
         this.result = false;
-        this.reason = 'The transaction was blocked, Username && phone numbers are invalid';
         R.stop();
       }
     }

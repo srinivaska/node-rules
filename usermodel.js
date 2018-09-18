@@ -6,7 +6,9 @@ var UserSchema = new mongoose.Schema({
   phone: String,
   city: String,
   state: String,
-  created_at: Date
+  created_at: Date,
+  phase: String,
+  smoke_count: String
 },{ collection: 'users' });
 
 module.exports = mongoose.model('User', UserSchema);
